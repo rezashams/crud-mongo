@@ -1,0 +1,18 @@
+<a href="http://localhost:8080">
+    Home
+</a>
+<br>
+<h1>Cars</h1>
+        <table>
+            <tr>
+                <th >Color</th>
+                <th>Model</th>
+            </tr>
+            {{range .Cars}}
+            <tr>
+                    <th >{{.Color}}</th>
+                    <th>{{.Model}}</th>
+            </tr>
+            {{end}}
+        </table>
+

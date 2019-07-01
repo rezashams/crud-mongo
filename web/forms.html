@@ -1,0 +1,18 @@
+<a href="http://localhost:8080/cars">
+    Show Cars
+</a>
+<br>
+{{if .Success}}
+    <h1>Thanks for Submittion!</h1>
+{{else}}
+    <h1>Car</h1>
+    <form method="POST">
+        <label>Color:</label><br />
+        <input type="text" name="color"><br />
+        <label>Model:</label><br />
+        <input type="text" name="model"><br />
+        <input type="submit">
+    </form>
+
+{{end}}
+
