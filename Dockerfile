@@ -3,19 +3,16 @@ FROM golang:1.12.0-alpine3.9
 # image that will hold our application source
 # files
 RUN apk add git
-RUN mkdir /app
-# We copy everything in the root directory
-# into our /app directory
-ADD . /app
+# Make the source code path
+RUN mkdir -p /go/src/github.com/rezashams/repository
 
-# We specify that we now wish to execute
-# any further commands inside our /app
-# directory
-WORKDIR /app
-Run go get ./...
+# Add all source code
+ADD . /go/src/repository
+WORKDIR /go/src/repository
+RUN go get ./...
 # we run go build to compile the binary
 # executable of our Go program
-RUN go build -o web/main/main web/main/main.go
+RUN go build -o main web/main/main.go
 # Our start command which kicks off
 # our newly created binary executable
-CMD ["./app/web/main/main"]
+CMD ["./main"]
