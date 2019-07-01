@@ -12,8 +12,8 @@
 package main
 
 import (
-	"../../db"
-	"../../model"
+	"github.com/rezashams/crud-mongo/db"
+	"github.com/rezashams/crud-mongo/model"
 	"html/template"
 	"net/http"
 )
